@@ -8,8 +8,8 @@
 int main(void)
 {
 int c;
-c = 048;
-for (c = 048; c <= 057; c++)
+c = 48;
+for (c = 48; c <= 57; c++)
 {
 putchar(c);
 }

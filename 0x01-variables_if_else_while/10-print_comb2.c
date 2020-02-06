@@ -11,8 +11,8 @@ int n;
 n = 0;
 for (n = 0; n < 100 ; n++)
 {
-putchar((n / 10) + '0');
-putchar((n % 10) + '0');
+putchar((n / 10) + 48);
+putchar((n % 10) + 48);
 putchar(',');
 putchar(' ');
 }

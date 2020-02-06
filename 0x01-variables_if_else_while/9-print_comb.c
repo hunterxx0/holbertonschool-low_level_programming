@@ -7,20 +7,16 @@
 */
 int main(void)
 {
-char c;
-c = '0';
-for (c = '0'; c <= '9'; c++)
+int n;
+n = 48;
+for (n = 48; n <= 57; n++)
 {
-if (c != 9)
+if (n != 57)
 {
-putchar("%d, ", c);
+putchar(n);
+putchat(',');
+putchar(' ');
 }
-else
-{
-putchar ("%d$ \n", c);
-}
-
-
 }
 putchar('\n');
 return (0);

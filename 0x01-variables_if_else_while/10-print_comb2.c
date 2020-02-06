@@ -13,8 +13,11 @@ for (n = 0; n < 100 ; n++)
 {
 putchar((n / 10) + 48);
 putchar((n % 10) + 48);
+if (n != 99)
+{
 putchar(',');
 putchar(' ');
+}
 }
 putchar('\n');
 return (0);

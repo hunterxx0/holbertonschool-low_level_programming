@@ -12,10 +12,13 @@ char c;
 n = 48;
 for (n = 48; n <= 57; n++)
 {
-putchar(c);
+putchar(n);
 }
 c = 97;
 for (c = 97; c <= 102; c++)
+{
+putchar(c);
+}
 putchar('\n');
 return (0);
 }

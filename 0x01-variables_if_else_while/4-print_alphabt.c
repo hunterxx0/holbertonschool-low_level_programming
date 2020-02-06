@@ -15,10 +15,6 @@ if (c != 'q' && c != 'e')
 {
 putchar(c);
 }
-else
-{
-c++;
-}
 }
 putchar('\n');
 return (0);

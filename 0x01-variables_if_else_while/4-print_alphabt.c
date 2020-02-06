@@ -11,7 +11,14 @@ char c;
 c = 'a';
 for (c = 'a'; c <= 'z'; c++)
 {
+if (c != 'q' && c != 'e')
+{
 putchar(c);
+}
+else
+{
+c++;
+}
 }
 putchar('\n');
 return (0);

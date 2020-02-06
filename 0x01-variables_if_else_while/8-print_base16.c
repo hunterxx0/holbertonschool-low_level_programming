@@ -14,6 +14,7 @@ for (n = 48; n <= 57; n++)
 {
 putchar(c);
 }
+c = 97;
 for (c = 97; c <= 102; c++)
 putchar('\n');
 return (0);

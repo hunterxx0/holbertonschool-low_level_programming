@@ -1,15 +1,14 @@
 #include "holberton.h"
 /**
-* main - last
+* print_last_digit(:)? (- last digit)?
+* @r: (input int r)?
 * Return: (0)
 */
 int print_last_digit(int r)
 {
-int z;
 if (r >= 10)
 {
-z = r % 10;
-return (z);
+return (r % 10);
 }
 else
 {

@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
-* main - low
+* _islower(:)? (- low)?
+* @c: (input int c)?
 * Return: (0)
 */
 int _islower(int c)

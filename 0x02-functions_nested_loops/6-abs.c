@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
-* main - abs
+* _abs(:)? (- abs)?
+* @r: (input int r)?
 * Return: (0)
 */
 int _abs(int r)

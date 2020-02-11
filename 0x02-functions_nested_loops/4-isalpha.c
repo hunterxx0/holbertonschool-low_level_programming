@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
-* main - low up
+* _isalpha(:)? (- low up)?
+* @c: (input in c)?
 * Return: (0)
 */
 int _isalpha(int c)

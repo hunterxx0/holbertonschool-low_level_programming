@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
-* main - low up
+* print_sign(:)? (-sign number)?
+* @n: (input int n)?
 * Return: (0)
 */
 int print_sign(int n)

@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
-* main - alpha
-* Return: (0)
+* print_alphabet(:)? (- prints Holberton)?
+*
+*
 */
 void print_alphabet(void)
 {

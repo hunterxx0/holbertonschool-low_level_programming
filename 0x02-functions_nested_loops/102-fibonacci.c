@@ -5,10 +5,11 @@
 */
 int main(void)
 {
-unsigned long int a = 0, b = 1, i, c;
+long int a = 0, b = 1, c;
+int i;
 for (i = 1; i <= 50; i++)
 {
-printf("%lu", b);
+printf("%ld", b);
 if (i <= 50)
 {
 printf(", ");

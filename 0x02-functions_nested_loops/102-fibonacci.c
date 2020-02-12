@@ -9,12 +9,12 @@ long int a = 0, b = 1, c;
 int i;
 for (i = 1; i <= 50; i++)
 {
-printf("%ld", b);
-if (i <= 50)
+c = a + b;
+printf("%ld", c);
+if (i < 50)
 {
 printf(", ");
 }
-c = a + b;
 a = b;
 b = c;
 }

@@ -9,7 +9,7 @@ unsigned long int a = 0, b = 1, i, c;
 for (i = 1; i <= 50; i++)
 {
 printf("%lu", b);
-if (i != 50)
+if (i <= 50)
 {
 printf(", ");
 }

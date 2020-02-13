@@ -1,16 +1,23 @@
 #include "holberton.h"
 /**
-* print_numbers(:)? (- 0 to 14 X 10)?
+* more_numbers(:)? (- 0 to 14 X 10)?
 *
 */
-void print_numbers(void)
+void more_numbers(void)
 {
 int i, j;
-for(j = 1; j <= 10; j++)
+int x, y;
+for (j = 1; j <= 10; j++)
 {
 for (i = 0; i <= 14; i++)
 {
-_putchar(i);
+x = i / 10;
+y = i % 10;
+if (i >= 10)
+{
+_putchar(x + '0');
+}
+_putchar(y + '0');
 }
 _putchar('\n');
 }

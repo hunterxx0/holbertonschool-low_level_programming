@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* void print_most_numbers(:)? (- 0 to 9)?
+* print_most_numbers(:)? (- 0 to 9)?
 *
 */
 void print_most_numbers(void)
@@ -13,5 +13,5 @@ if (i != 50 && i != 52)
 _putchar(i);
 }
 }
-_putchar(\n);
+_putchar('\n');
 }

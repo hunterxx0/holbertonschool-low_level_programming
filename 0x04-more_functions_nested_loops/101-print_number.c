@@ -34,7 +34,7 @@ if (x > 0)
 {
 _putchar (x + '0');
 j = i;
-while (j  >= 10)
+while (j >= 10)
 {
 z = ((n % j) / (j / 10));
 _putchar (z + '0');

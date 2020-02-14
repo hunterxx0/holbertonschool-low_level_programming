@@ -20,6 +20,31 @@ else
 _putchar (n + '0');
 }
 }
+else if (n == -2147483648)
+{
+_putchar('-');
+n = ((n * -1) - 1);
+for (i = 1000000000; i >= 10; i = i / 10)
+{
+x = n / i;
+_putchar (x + '0');
+j = i;
+while (j >= 10)
+{
+z = ((n % j) / (j / 10));
+if (j == 10)
+{
+_putchar ((z + 1) + '0');
+}
+else
+{
+_putchar (z + '0');
+}
+j = j / 10;
+}
+break;
+}
+}
 else
 {
 if (n < 10)

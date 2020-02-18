@@ -10,11 +10,11 @@ int _atoi(char *s)
 int i, n = 0, x = 0, m = 0, e = 0;
 for (i = 0; s[i] != '\0'; i++)
 {
-if (s[i] = '+')
+if (s[i] == '+')
 {
 x = x + 1;
 }
-else if (s[i] = '-')
+else if (s[i] == '-')
 {
 m = m + 1
 }

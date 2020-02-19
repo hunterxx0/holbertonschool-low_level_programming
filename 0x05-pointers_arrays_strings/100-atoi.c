@@ -7,15 +7,11 @@
 */
 int _atoi(char *s)
 {
-int i, x = 0, m = 0, e = 0;
+int i, m = 0, e = 0;
 unsigned int n = 0;
 for (i = 0; s[i] != '\0'; i++)
 {
-if (s[i] == '+')
-{
-x = x + 1;
-}
-else if (s[i] == '-')
+if (s[i] == '-')
 {
 m = m + 1;
 }
@@ -35,7 +31,7 @@ return (0);
 }
 else
 {
-if (m > x)
+if (m % 2 != 0)
 {
 n = n * -1;
 }

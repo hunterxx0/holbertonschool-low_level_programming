@@ -15,9 +15,7 @@ for (i = 0; swt[i] != '\0'; i++)
 for (j = 0; j < 10; j++)
 {
 if (swt[i] == l[j])
-{
 swt[i] = s[j];
-}
 }
 }
 return (swt);

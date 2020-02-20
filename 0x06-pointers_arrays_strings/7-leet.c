@@ -3,7 +3,7 @@
 * *leet(:)? (- switch)?
 *
 * @swt: input array
-* Return: 0
+* Return: swt
 */
 char *leet(char *swt)
 {

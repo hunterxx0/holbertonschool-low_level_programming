@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* *_strncpy(:)? (- concatenates)?
+* reverse_array(:)? (- rev arr)?
 *
 * @a: input array
 * @n: input long
@@ -8,7 +8,7 @@
 */
 void reverse_array(int *a, int n)
 {
-  int i, j, x = 0;
+int i, j, x = 0;
 i = n - 1;
 j = 0;
 while (j < n / 2)

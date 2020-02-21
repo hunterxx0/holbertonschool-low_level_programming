@@ -1,22 +1,22 @@
 #include "holberton.h"
 /**
-* *leet(:)? (- switch)?
+* *leet(:)? (- transf)?
 *
-* @swt: input array
-* Return: swt
+* @t: input array
+* Return: t
 */
-char *leet(char *swt)
+char *leet(char *t)
 {
 int i, j;
 char l[] = "aAeEoOtTlL";
 char s[] = "4433007711";
-for (i = 0; swt[i] != '\0'; i++)
+for (i = 0; t[i] != '\0'; i++)
 {
 for (j = 0; l[j] != '\0'; j++)
 {
-if (swt[i] == l[j])
-swt[i] = s[j];
+if (t[i] == l[j])
+t[i] = s[j];
 }
 }
-return (swt);
+return (t);
 }

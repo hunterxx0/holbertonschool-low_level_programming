@@ -4,7 +4,7 @@
 *
 * @to: input char
 * @s: input char
-* Return: 
+* Return:
 */
 void set_string(char **s, char *to)
 {

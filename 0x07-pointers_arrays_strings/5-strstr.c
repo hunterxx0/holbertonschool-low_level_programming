@@ -8,7 +8,11 @@
 */
 char *_strstr(char *h, char *n)
 {
-unsigned int i = 0, j = 0;
+unsigned int i = 0, k, j = 0;
+char *p;
+for (k = 0; n[k] != '\0'; k++)
+;
+k -= 1;
 while ((h[j] != '\0') && (n[i] != '\0'))
 {
 if (n[i] != h[j])
@@ -22,8 +26,9 @@ i++;
 j++;
 }
 }
+p = &h[j - 1 - k];
 if (n[i] == '\0')
-return (n);
+return (p);
 else
 return (0);
 }

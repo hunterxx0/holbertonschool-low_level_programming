@@ -8,6 +8,8 @@
  */
 int check(int n, int i)
 {
+if (n == 1)
+return (1);
 	if (i == n)
 	{
 		return (-1);
@@ -32,8 +34,5 @@ int check(int n, int i)
 int _sqrt_recursion(int n)
 {
 	int c = check(n, 1);
-	if (n == 1)
-		return (1);
-	else
-		return (c);
+return (c);
 }

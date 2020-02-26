@@ -32,7 +32,7 @@ int check(int n, int i)
 int is_prime_number(int n)
 {
 	int c = check(n, 2);
-	if (c == 0)
+if (c == 0)
 	return (0);
 	else
 	return (1);

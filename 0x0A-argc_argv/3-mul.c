@@ -10,6 +10,8 @@ int _digit(char *p)
 {
 	while (*p != '\0')
 	{
+		if (*p == '-')
+			p++;
 		if (*p < '0' || *p > '9')
 		{
 			return (0);

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 			return (1);
 	}
-	if (argv[2] > 'a' && argv[2] < 'z')
+	if (argc < 2 && (argv[2] > 'a' && argv[2] < 'z'))
 	{
 		printf("Error\n");
 return (1);

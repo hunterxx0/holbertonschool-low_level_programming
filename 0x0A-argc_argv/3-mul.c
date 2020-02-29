@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * _digit(:)? (- char)?
+ *
+ * @p: input char
+ * Return: 0 or 1
+ */
+int _digit(char *p)
+{
+	while (*p != '\0')
+	{
+		if (*p < '0' || *p > '9')
+		{
+			return (0);
+		}
+		p++;
+	}
+	return (1);
+
+}
+
+/**
 * main(:)? (- argc argv)?
 *
 * @argc: input int
@@ -9,12 +29,12 @@
 */
 int main(int argc, char *argv[])
 {
-	if (argc < 2 && (argv[1] > 'a' && argv[1] < 'z'))
+	if (argc < 2)
 	{
 		printf("Error\n");
 			return (1);
 	}
-	if (argc < 2 && (argv[2] > 'a' && argv[2] < 'z'))
+	if (_digit(argv[1]) == 0 || _digit(argv[2]) == 0)
 	{
 		printf("Error\n");
 return (1);

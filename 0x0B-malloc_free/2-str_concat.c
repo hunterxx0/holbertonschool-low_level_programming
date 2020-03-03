@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -14,9 +13,15 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, k, j, x = 0;
 
 	if (s1 == NULL)
-		s1 = "";
+	{
+		s1 = malloc(sizeof(char));
+		*s1 = '\0';
+	}
 	if (s2 == NULL)
-		s2 = "";
+	{
+		s2 = malloc(sizeof(char));
+		*s2 = '\0';
+	}
 	for (j = 0; s1[j] != '\0'; j++)
 	;
 	for (k = 0; s2[k] != '\0'; k++)
@@ -26,15 +31,9 @@ char *str_concat(char *s1, char *s2)
 	z = malloc(sizeof(char) * (k + j - 1));
 	if (z == NULL)
 		return (NULL);
-	for (i = 0; i < k + j; i++)
+	for (i = 0; i < k + j ; i++)
 	{
-		if (j == 0)
-		{
-			z[i] = s2[i];
-		}
-		else if (s2 == NULL && i == j)
-			break;
-		else if (i <= j)
+		if (i <= j - 1)
 			z[i] = s1[i];
 		else
 		{

@@ -13,9 +13,9 @@ char *_strdup(char *s)
 
 	for (j = 0; s[j] != '\0'; j++)
 	;
-	if (s == 0 || j - 1 > 5000)
-		return (0);
-	z = malloc(sizeof(char) * 5000);
+	if (s == 0)
+		return (NULL);
+	z = malloc(sizeof(char) * j);
 	for (i = 0; i < j; i++)
 	{
 		z[i] = s[i];

@@ -16,10 +16,12 @@ char *_strdup(char *s)
 	z = malloc(sizeof(char) * j);
 	if (j == 0 || z == NULL || s == NULL)
 		return (NULL);
-	for (i = 0; i < j; i++)
+	for (i = 0; i <= j; i++)
 	{
-		z[i] = s[i];
+		if (i != j)
+			z[i] = s[i];
+		else
+			z[j] = '\0';
 	}
-	z[j] = '\0';
-	return (z);
+return (z);
 }

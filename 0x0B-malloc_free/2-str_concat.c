@@ -24,9 +24,11 @@ char *str_concat(char *s1, char *s2)
 	;
 	for (k = 0; s2[k] != '\0'; k++)
 	;
-	if (j == 0 && k == 0)
+/**	if (j == 0 && k == 0)
 		return (NULL);
-	z = malloc(sizeof(char) * (k + j - 1));
+*/
+
+	z = malloc(sizeof(char) * (k + j + 1));
 	if (z == NULL)
 		return (NULL);
 	for (i = 0; i < k + j ; i++)

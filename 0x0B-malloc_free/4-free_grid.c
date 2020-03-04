@@ -12,7 +12,7 @@ void free_grid(int **g, int h)
 	int i;
 	for (i = 0; i < h; i++)
 	{
-		free(z[i]);
+		free(g[i]);
 	}
-	free(z);
+	free(g);
 }

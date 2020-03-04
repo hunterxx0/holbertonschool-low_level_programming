@@ -15,7 +15,7 @@ int **alloc_grid(int w, int h)
 
 	if (w <= 0 || h <= 0)
 		return (NULL);
-	z = (int**)malloc(sizeof(int *) * h);
+	z = (int **)malloc(sizeof(int *) * h);
 		if (z == NULL)
 		{
 			free(z);

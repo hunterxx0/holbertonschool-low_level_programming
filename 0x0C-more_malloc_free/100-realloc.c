@@ -22,7 +22,15 @@ void *_realloc(void *p, unsigned int o, unsigned int n)
 	{
 	p = malloc(n);
 	if (p == NULL)
-		return (NULL);
+	{
+		z = malloc(n);
+		if (z == NULL)
+			return (NULL);
+		for (i = 0; i < o; i++)
+			z[i] = '\0';
+		free(p);
+		return (z);
+	}
 	}
 	else if (n < o)
 	{

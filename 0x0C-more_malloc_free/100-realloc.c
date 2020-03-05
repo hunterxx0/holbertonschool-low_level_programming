@@ -18,29 +18,29 @@ void *_realloc(void *p, unsigned int o, unsigned int n)
 		free(p);
 		return (NULL);
 	}
-	else if (n > o || p == NULL)
+	else if (n > o)
 	{
-	p = malloc(n);
-	if (p == NULL)
-	{
-		z = malloc(n);
-		if (z == NULL)
+	z = malloc(n);
+	if (z == NULL)
 			return (NULL);
-		for (i = 0; i < n; i++)
-			z[i] = '\0';
 		free(p);
 		return (z);
-	}
 	}
 	else if (n < o)
 	{
 		z = malloc(n);
 		if (z == NULL)
 			return (NULL);
-		for (i = 0; i < n; i++)
+		for (i = 0; i < o; i++)
 			z[i] = ((char *)p)[i];
 		free(p);
 		return (z);
+	}
+	else if (p == NULL)
+	{
+		p = malloc(n);
+		if (p == NULL)
+			return (NULL);
 	}
 	return (p);
 }

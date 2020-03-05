@@ -20,8 +20,8 @@ void *_realloc(void *p, unsigned int o, unsigned int n)
 	}
 	else if (n > o)
 	{
-z = malloc(n);
-if (z == NULL)
+		z = malloc(n);
+		if (z == NULL)
 			return (NULL);
 		free(p);
 		return (z);

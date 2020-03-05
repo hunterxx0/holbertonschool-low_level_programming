@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* ? (- create array)?
+* malloc_checked? (- create array)?
 *
-* @s: input int malloc
+* @b: input int malloc
 * Return: z
 */
 void *malloc_checked(unsigned int b)
@@ -13,7 +13,7 @@ void *malloc_checked(unsigned int b)
 	z = malloc(b);
 	if (z == NULL)
 	{
-		exit (98);
+		exit(98);
 	}
 	return (z);
 }

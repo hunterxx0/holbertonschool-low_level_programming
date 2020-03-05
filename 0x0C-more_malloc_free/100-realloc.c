@@ -26,7 +26,7 @@ void *_realloc(void *p, unsigned int o, unsigned int n)
 		z = malloc(n);
 		if (z == NULL)
 			return (NULL);
-		for (i = 0; i < o; i++)
+		for (i = 0; i < n; i++)
 			z[i] = '\0';
 		free(p);
 		return (z);

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* _calloc? (- create array)?
+* array_range? (- create array)?
 *
 * @min: input int
 * @max: input int

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-* str_concat? (- concat)?
+* string_nconcat? (- concat)?
 *
 * @s1: input int array size
 * @s2: input int array size
@@ -26,11 +26,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (k = 0; s2[k] != '\0'; k++)
 	;
 	if (n < k)
-	{
 		k = n;
-	z = malloc(sizeof(char) * (j + n + 1));
-	}
-	else
 		z = malloc(sizeof(char) * (j + k + 1));
 	if (z == NULL)
 	{

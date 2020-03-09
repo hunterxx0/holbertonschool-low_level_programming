@@ -2,6 +2,36 @@
 #include<stdlib.h>
 #include "dog.h"
 /**
+ * _strp? (- cp str)?
+ *
+ * @s: input int array size
+ * Return: z
+ */
+char *strp(char *s)
+{
+	char *z;
+	unsigned int i, j;
+
+	if (s == NULL)
+		return (NULL);
+	for (j = 0; s[j] != '\0'; j++)
+		;
+	z = malloc(sizeof(char) * j + 1);
+	if (z == NULL)
+	{
+		free(z);
+		return (NULL);
+	}
+	for (i = 0; i <= j; i++)
+	{
+		if (i != j)
+			z[i] = s[i];
+		else
+			z[j] = '\0';
+	}
+	return (z);
+}
+/**
  * new_dog(:)? (- init new dog)?
  *
  * @n: name
@@ -14,41 +44,25 @@ dog_t *new_dog(char *n, float a, char *o)
 	dog_t *p;
 	char *na;
 	char *ow;
-	int i = 0, j = 0, c = 0;
 
-	if (n == NULL)
-		n = "";
-	if (o == NULL)
-		o = "";
 	p = malloc(sizeof(dog_t));
 	if (p == NULL)
 	{
 		free(p);
 		return (NULL);
 	}
-	while (n[i])
-		i++;
-	while (o[j])
-		j++;
-	na = malloc(sizeof(char) * (i + 1));
+	na = strp(n);
 	if (na == NULL)
 	{
 		free(p);
 		return (NULL);
 	}
-	for (c = 0; c < i; c++)
-		na[c] = n[c];
-	na[c] = '\0';
-	ow = malloc(sizeof(char) * (j + 1));
+	ow = strp(o);
 	if (ow == NULL)
 	{
-		free(ow);
 		free(p);
 		return (NULL);
 	}
-	for (c = 0; c < j; c++)
-		ow[c] = o[c];
-	ow[c] = '\0';
 	p->name = na;
 	p->age = a;
 	p->owner = ow;

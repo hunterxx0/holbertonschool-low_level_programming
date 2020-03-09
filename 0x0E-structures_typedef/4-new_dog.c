@@ -54,12 +54,15 @@ dog_t *new_dog(char *n, float a, char *o)
 	na = strp(n);
 	if (na == NULL)
 	{
+		free(na);
 		free(p);
 		return (NULL);
 	}
 	ow = strp(o);
 	if (ow == NULL)
 	{
+		free(ow);
+		free(na);
 		free(p);
 		return (NULL);
 	}

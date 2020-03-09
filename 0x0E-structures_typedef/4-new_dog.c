@@ -16,8 +16,10 @@ dog_t *new_dog(char *n, float a, char *o)
 	char *ow;
 	int i = 0, j = 0, c = 0;
 
-	if (n == NULL || o == NULL)
-		return (NULL);
+	if (n == NULL)
+		n = "";
+	if (o == NULL)
+		o = "";
 	p = malloc(sizeof(dog_t));
 	if (p == NULL)
 	{

@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include "dog.h"
 /**
- * _strp? (- cp str)?
+ * strp? (- cp str)?
  *
  * @s: input int array size
  * Return: z

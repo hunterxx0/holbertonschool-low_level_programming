@@ -1,7 +1,4 @@
-#ifndef NULL
-#define NULL (void *)0
-#endif
 #ifndef FUNCTION_LIKE_MACRO_H_
 #define FUNCTION_LIKE_MACRO_H_
-#define ABS(X) ((X<0)?(-X):(X))
+#define ABS(X) ((X<0)?(-X):(X)) while (0)
 #endif

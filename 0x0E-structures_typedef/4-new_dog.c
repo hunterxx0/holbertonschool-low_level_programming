@@ -46,7 +46,7 @@ dog_t *new_dog(char *n, float a, char *o)
 	char *ow;
 
 	p = malloc(sizeof(struct dog));
-	if (p == NULL)
+	if (p == NULL || a < 0)
 	{
 		free(p);
 		return (NULL);

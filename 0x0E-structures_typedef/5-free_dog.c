@@ -4,7 +4,7 @@
 /**
  * free_dog(:)? (- set them free)?
  *
- * @n: name
+ * @d: dog
  */
 void free_dog(dog_t *d)
 {

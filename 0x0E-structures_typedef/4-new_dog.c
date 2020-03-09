@@ -41,11 +41,11 @@ char *strp(char *s)
  */
 dog_t *new_dog(char *n, float a, char *o)
 {
-	dog_t *p;
+	struct dog *p;
 	char *na;
 	char *ow;
 
-	p = malloc(sizeof(dog_t));
+	p = malloc(sizeof(struct dog));
 	if (p == NULL)
 	{
 		free(p);
@@ -63,8 +63,8 @@ dog_t *new_dog(char *n, float a, char *o)
 		free(p);
 		return (NULL);
 	}
-	p->name = na;
-	p->age = a;
-	p->owner = ow;
+	(*p).name = na;
+	(*p).age = a;
+	(*p).owner = ow;
 	return (p);
 }

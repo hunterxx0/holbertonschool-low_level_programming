@@ -12,7 +12,7 @@ void array_iterator(int *a, size_t s, void (*act)(int))
 {
 	unsigned int i;
 
-	if (a == NULL || s == 0)
+	if (a == NULL || s == 0 || act == NULL)
 		return;
 	for (i = 0; i < s; i++)
 	act(a[i]);

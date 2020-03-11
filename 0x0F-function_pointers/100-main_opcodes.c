@@ -11,6 +11,8 @@
  */
 int main(int ac, char *av[])
 {
+	int *z;
+
 	if (ac != 2)
 	{
 		printf("Error\n");
@@ -27,6 +29,7 @@ int main(int ac, char *av[])
 		printf("Error\n");
 		exit(2);
 	}
-	printf("%x\n", atoi(av[1]));
+	z = (int *)&main;
+	printf("%x\n", z[atoi(av[1])]);
 	return (0);
 }

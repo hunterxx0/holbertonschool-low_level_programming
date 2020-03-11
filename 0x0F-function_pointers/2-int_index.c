@@ -15,7 +15,6 @@ int int_index(int *a, int s, int (*cmp)(int))
 
 	if (a == NULL || s <= 0)
 	{
-		free(a);
 		return (-1);
 	}
 	for (i = 0; i < s; i++)

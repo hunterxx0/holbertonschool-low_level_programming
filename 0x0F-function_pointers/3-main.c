@@ -19,12 +19,12 @@ int main(int ac, char *av[])
 		printf("Error\n");
 			exit(98);
 	}
-	if (strlen(av[1]) != 1)
+	if ((strlen(av[1]) != 1) || (av[2][0] != '+' && av[2][0] != '-'))
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if (av[2][0] != '+' && av[2][0] != '-' && av[2][0] != '*' && av[2][0] != '/' && av[2][0] != '%')
+	if (av[2][0] != '*' && av[2][0] != '/' && av[2][0] != '%')
 	{
 		printf("Error\n");
 		exit(99);

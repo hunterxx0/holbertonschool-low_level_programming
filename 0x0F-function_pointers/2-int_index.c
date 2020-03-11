@@ -13,7 +13,7 @@ int int_index(int *a, int s, int (*cmp)(int))
 {
 	int i;
 
-	if (a == NULL || s <= 0)
+	if (a == NULL || s <= 0 || cmp == NULL)
 	{
 		return (-1);
 	}

@@ -17,10 +17,10 @@ int main(int ac, char *av[])
 			exit(1);
 	}
 
-	if(strlen(av[1]) != 2)
+	if (strlen(av[1]) != 2)
 	{
 		printf("Error\n");
-                exit(2);
+		exit(2);
 	}
 	printf("%x\n", atoi(av[1]));
 	return (0);

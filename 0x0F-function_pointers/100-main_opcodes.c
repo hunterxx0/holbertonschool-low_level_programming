@@ -22,6 +22,11 @@ int main(int ac, char *av[])
 		printf("Error\n");
 		exit(2);
 	}
+	if (av[1] < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 	printf("%x\n", atoi(av[1]));
 	return (0);
 }

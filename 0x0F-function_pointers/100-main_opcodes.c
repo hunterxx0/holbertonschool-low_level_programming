@@ -19,12 +19,6 @@ int main(int ac, char *av[])
 		printf("Error\n");
 			exit(1);
 	}
-
-	if (strlen(av[1]) != 2)
-	{
-		printf("Error\n");
-		exit(2);
-	}
 	if (av[1] < 0)
 	{
 		printf("Error\n");

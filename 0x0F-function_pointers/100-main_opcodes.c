@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 /**
  * main(:)? (- argc argv)?
  *
@@ -28,6 +27,7 @@ int main(int ac, char *av[])
 	for (i = 0; i < atoi(av[1]); i++)
 	{
 		printf("%02x", (unsigned char)z[i]);
+		if (i != atoi(av[1]) - 1)
 		printf(" ");
 	}
 	printf("\n");

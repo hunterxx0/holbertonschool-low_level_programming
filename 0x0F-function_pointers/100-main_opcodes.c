@@ -16,9 +16,9 @@ int main(int ac, char *av[])
 	if (ac != 2)
 	{
 		printf("Error\n");
-			exit(1);
+		exit(1);
 	}
-	if (av[1] < 0)
+	if (atoi(av[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);

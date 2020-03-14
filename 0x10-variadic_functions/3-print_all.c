@@ -16,19 +16,18 @@ void print_all(const char * const frm, ...)
 	};
 	unsigned int j, i = 0;
 	va_list ap;
-	char *z = "";
 
 	va_start(ap, frm);
-	while (frm[i] && frm)
+	while (frm && frm[i])
 	{
 		j = 0;
 		while (j < 4)
 		{
 			if (get[j].c == frm[i])
 			{
-				printf("%s", z);
 				get[j].f(ap);
-				z = ", ";
+				if (frm[i + 1] != '\0')
+				printf(", ");
 			}
 				j++;
 		}

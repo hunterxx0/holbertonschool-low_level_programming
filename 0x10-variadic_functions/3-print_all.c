@@ -16,7 +16,7 @@ void print_all(const char * const frm, ...)
 	};
 	unsigned int j, i = 0;
 	va_list ap;
-
+	char *z = "";
 
 	va_start(ap, frm);
 	while (frm[i] && frm)
@@ -26,9 +26,9 @@ void print_all(const char * const frm, ...)
 		{
 			if (get[j].c == frm[i])
 			{
+				printf("%s", z);
 				get[j].f(ap);
-				if (frm[i + 1] != '\0')
-					printf(", ");
+				z = ", ";
 			}
 				j++;
 		}

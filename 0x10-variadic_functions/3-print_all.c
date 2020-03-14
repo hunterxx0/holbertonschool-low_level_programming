@@ -20,7 +20,7 @@ void print_c(va_list ap)
  */
 void print_i(va_list ap)
 {
-        printf("%d", va_arg(ap, int));
+	printf("%d", va_arg(ap, int));
 }
 /**
  * print_f? (- print f)?
@@ -30,7 +30,7 @@ void print_i(va_list ap)
  */
 void print_f(va_list ap)
 {
-        printf("%f", va_arg(ap, double));
+	printf("%f", va_arg(ap, double));
 }
 /**
  * print_s? (- print s)?
@@ -41,18 +41,18 @@ void print_f(va_list ap)
 void print_s(va_list ap)
 {
 	char *str = va_arg(ap, char *);
+
 	if (str != NULL)
 		printf("%s", str);
 	else
 		printf("(nil)");
 }
 /**
-*
-* print_all? (- print all)?
-*
-* @frm: input format
-* Return:
-*/
+ * print_all? (- print a)?
+ *
+ * @frm: input format
+ * Return:
+ */
 void print_all(const char * const frm, ...)
 {
 	get_f get[] = {
@@ -64,8 +64,9 @@ void print_all(const char * const frm, ...)
 	unsigned int j, i = 0;
 	va_list ap;
 
+
 	va_start(ap, frm);
-	while(frm[i] && frm)
+	while (frm[i] && frm)
 	{
 		j = 0;
 		while (j < 4)

@@ -14,8 +14,6 @@ void print_strings(const char *s, const unsigned int n, ...)
 	char *str;
 	va_list ap;
 
-	if (n == 0)
-		return;
 	va_start(ap, n);
 	for (i = 0; i < n; i++)
 	{
@@ -24,7 +22,7 @@ void print_strings(const char *s, const unsigned int n, ...)
 			printf("%s", str);
 		else
 			printf("(nil)");
-		if (s != NULL || i != n - 1)
+		if (s != NULL && i != n - 1)
 		printf("%s", s);
 	}
 	printf("\n");

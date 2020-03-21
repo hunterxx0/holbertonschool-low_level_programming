@@ -1,11 +1,11 @@
 #include "lists.h"
 /**
- * free_list? (- free list)?
+ * start? (- start first)?
  *
- * @h: input format
  * Return:
  */
-void start (void)
+void start(void)
 {
-printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my\ back!\n");
 }

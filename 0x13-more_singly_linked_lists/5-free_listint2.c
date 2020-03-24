@@ -12,7 +12,7 @@ void free_listint2(listint_t **h)
 	if (!*h)
 		return;
 	t = *h;
-	while (h && t)
+	while (*h && t)
 	{
 		z = t;
 		t = t->next;

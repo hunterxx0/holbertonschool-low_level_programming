@@ -9,7 +9,7 @@ void free_listint2(listint_t **h)
 {
 	listint_t *t, *z;
 
-	if (!*h)
+	if (!*h || !h)
 		return;
 	t = *h;
 	while (*h && t)

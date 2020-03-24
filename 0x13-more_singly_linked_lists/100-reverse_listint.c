@@ -8,7 +8,8 @@
 listint_t *reverse_listint(listint_t **h)
 {
 	if (*h == NULL)
-		return (*h);
+		return (NULL);
 	reverse_listint(&(*h)->next);
 	printf("%d\n", (*h)->n);
+	return (*h);
 }

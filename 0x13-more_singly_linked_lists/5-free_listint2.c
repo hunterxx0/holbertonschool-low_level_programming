@@ -11,10 +11,9 @@ void free_listint2(listint_t **h)
 
 	if (!*h)
 	{
-		free(h);
 		return;
 	}
-	while (*h)
+	while ((*h)->next)
 	{
 		t = *h;
 		*h = (*h)->next;

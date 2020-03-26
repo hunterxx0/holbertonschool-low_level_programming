@@ -10,6 +10,7 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int c = 4611686018427387904, x = 0;
 
+	c <<= 1;
 	while (c > 0)
 	{
 		if (((n & c) == 0) && ((x != 0) || (c >> 1 == 0)))

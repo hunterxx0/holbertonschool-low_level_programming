@@ -8,7 +8,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int c = 2147483648, x = 0;
+	unsigned long int c = 4294967296, x = 0;
 
 	while (c > 0)
 	{

@@ -65,7 +65,9 @@ int get_bit(unsigned long int n, unsigned int i)
 	l--;
 	if (i > l || i > 32)
 		return (-1);
-
+	if (z[i] == '0' || z[i] == '1')
 	return (z[i] - '0');
+	else
+		return (-1);
 
 }

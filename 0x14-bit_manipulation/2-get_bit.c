@@ -34,10 +34,10 @@ void rev_str(char *s)
 int get_bit(unsigned long int n, unsigned int i)
 {
 	unsigned long int c = 4611686018427387904, x = 0, j = 0, l = 0;
-	char z[65];
+	char z[80];
 
 	c <<= 1;
-	while (j < 65)
+	while (j < 80)
 	{
 		z[j] = '0';
 		j++;

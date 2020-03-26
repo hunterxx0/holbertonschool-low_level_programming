@@ -98,7 +98,7 @@ int clear_bit(unsigned long int *n, unsigned int i)
 	while (h[l])
 		l++;
 	l--;
-	if (i > l)
+	if ((i > l) || i > ((sizeof(n) * 8) - 1))
 		return (-1);
 	if (h[i] != '0')
 		h[i] = '0';

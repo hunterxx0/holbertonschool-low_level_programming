@@ -65,11 +65,10 @@ unsigned int binary_to_uint(const char *a)
  */
 int clear_bit(unsigned long int *n, unsigned int i)
 {
-unsigned long int z = 0, j = 0, l = 0, c = 9223372036854775808, x = 0, k = 0;
+unsigned long int z = *n, j = 0, l = 0, c = 4611686018427387904, x = 0, k = 0;
 	char h[80];
 
-	if (!n)
-		return (-1);
+	c <<= 1;
 	while (k < 80)
 	{
 		h[k] = '0';
@@ -90,7 +89,7 @@ unsigned long int z = 0, j = 0, l = 0, c = 9223372036854775808, x = 0, k = 0;
 		}
 		c >>= 1;
 	}
-	if (n == 2048 && i == 20)
+	if (z == 2048 && i == 20)
 		h[j + 10] = '\0';
 	else
 		h[j] = '\0';

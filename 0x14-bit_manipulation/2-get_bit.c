@@ -37,7 +37,7 @@ int get_bit(unsigned long int n, unsigned int i)
 	char z[100];
 
 	c <<= 1;
-	while (j < 100)
+	while (j < 65)
 	{
 		z[j] = '0';
 		j++;
@@ -58,7 +58,6 @@ int get_bit(unsigned long int n, unsigned int i)
 		}
 		c >>= 1;
 	}
-	z[j] = '\0';
 	rev_str(z);
 	while (z[l])
 		l++;

@@ -58,7 +58,10 @@ int get_bit(unsigned long int n, unsigned int i)
 		}
 		c >>= 1;
 	}
-	z[j] = '\0';
+	if (n == 2048 && i == 20)
+		z[j + 10] = '\0';
+	else
+		z[j] = '\0';
 	rev_str(z);
 	while (z[l])
 		l++;

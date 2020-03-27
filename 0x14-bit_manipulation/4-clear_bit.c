@@ -1,62 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * rev_str(:)? (- rev string)?
- *
- * @s: input string
- * Return: 0 or 1
- */
-void rev_str(char *s)
-{
-	char k;
-	int i = 0, j, l;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	l = i - 1;
-	for (j = 0 ; j < (i / 2); j++)
-	{
-		k = s[l];
-		s[l] = s[j];
-		s[j] = k;
-		l--;
-	}
-}
-/**
- * binary_to_uint? (- binary to unsg int)?
- *
- * @a: input head
- * Return: x
- */
-unsigned int binary_to_uint(const char *a)
-{
-	unsigned int x = 1, i;
-	int l;
-	int z[64];
-
-	if (a == NULL)
-		return (0);
-	for (i = 0; i < 64; i++)
-	{
-		z[i] = x;
-		x *= 2;
-	}
-	for (l = 0; a[l]; l++)
-		;
-	l--;
-	x = 0;
-	for (i = 0; l >= 0; i++, l--)
-	{
-		if (a[l] != '0' && a[l] != '1')
-			return (0);
-		if (a[l] == '1')
-			x += z[i];
-	}
-	return (x);
-}
-/**
  * clear_bit? (- bit at idx)?
  *
  * @n: input number
@@ -65,43 +9,11 @@ unsigned int binary_to_uint(const char *a)
  */
 int clear_bit(unsigned long int *n, unsigned int i)
 {
-unsigned long int z = *n, j = 0, l = 0, c = 4611686018427387904, x = 0, k = 0;
-	char h[80];
+	unsigned long int k;
 
-	c <<= 1;
-	while (k < 80)
-	{
-		h[k] = '0';
-		k++;
-	}
-	while (c > 0)
-	{
-		if (((z & c) == 0) && ((x != 0) || (c >> 1 == 0)))
-		{
-			h[j] = '0';
-			j++;
-		}
-		if ((z & c) != 0)
-		{
-			h[j] = '1';
-			j++;
-			x++;
-		}
-		c >>= 1;
-	}
-	if (z == 2048 && i == 20)
-		h[j + 10] = '\0';
-	else
-		h[j] = '\0';
-	rev_str(h);
-	while (h[l])
-		l++;
-	l--;
-	if ((i > l) || i > ((sizeof(n) * 8) - 1))
+	if (i > 65 || !n)
 		return (-1);
-	if (h[i] != '0')
-		h[i] = '0';
-	rev_str(h);
-	*n = binary_to_uint(h);
+	k = 1 << i;
+	*n &= ~k;
 	return (1);
 }

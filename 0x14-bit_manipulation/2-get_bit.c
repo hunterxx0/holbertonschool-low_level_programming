@@ -33,7 +33,7 @@ void rev_str(char *s)
  */
 int get_bit(unsigned long int n, unsigned int i)
 {
-	unsigned long int c = 4611686018427387904, x = 0, j = 0;
+	unsigned long int c = 4611686018427387904, x = 0, j = 0, l = 0;
 	char z[64];
 
 	c <<= 1;
@@ -58,12 +58,13 @@ int get_bit(unsigned long int n, unsigned int i)
 		}
 		c >>= 1;
 	}
+	z[j] = '\0';
 	rev_str(z);
-	if (i > 63)
+	while (z[l])
+		l++;
+	l--;
+	if (i > l)
 		return (-1);
-	if (z[i] == '0' || z[i] == '1')
 	return (z[i] - '0');
-	else
-		return (-1);
 
 }

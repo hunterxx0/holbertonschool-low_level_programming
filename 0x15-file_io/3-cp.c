@@ -14,11 +14,11 @@ int _strl(char *s)
 	return (i);
 }
 /**
- * err97(:)? (- long)?
+ * err97(:)? (- err 97)?
  *
  * Return:
  */
-void err97(void)
+void err97()
 {
 	char *e97 = "Usage: cp file_from file_to\n";
 	int l97 = _strl(e97);
@@ -27,29 +27,23 @@ void err97(void)
 	exit(97);
 }
 /**
- * err98(:)? (- long)?
+ * err98(:)? (- err 98)?
  *
  * Return:
  */
-void err98(void)
+void err98(char *s)
 {
-        char *e98 = "Error: Can't read from file NAME_OF_THE_FILE\n";
-        int l98 = _strl(e98);
-
-		write(STDERR_FILENO, e98, l98);
-		exit(98);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
+	exit(98);
 }
 /**
  * err99(:)? (- err 99)?
  *
  * Return:
  */
-void err99(void)
+void err99(char *s)
 {
-	char *e99 = "Error: Can't write to NAME_OF_THE_FILE\n";
-        int l99 = _strl(e99);
-
-	write(STDERR_FILENO, e99, l99);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 	exit(99);
 }
 /**
@@ -57,12 +51,9 @@ void err99(void)
  *
  * Return:
  */
-void err100(void)
+void err100(int c)
 {
-	char *e100 = "Error: Can't close fd FD_VALUE";
-        int l100 = _strl(e100);
-
-	write(STDERR_FILENO, e100, l100);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d", c);
 	exit(100);
 }
 /**
@@ -74,33 +65,34 @@ void err100(void)
  */
 int main(int ac, char **av)
 {
-	char *e100 = "Error: Can't close fd FD_VALUE";
 	char buf;
 	int fr = 0, fw = 0, w = 0;
-	int l100 = _strl(e100), cr = 0, cw = 0, r = 0;
+	int cr = 0, cw = 0, r = 0;
 
 	if (ac != 3)
 		err97();
 	fr = open(av[1], O_RDONLY);
 	if (fr == -1)
-		err98();
+		err98(av[1]);
 	fw = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fw == -1)
-		err99();
+		err99(av[2]);
 	while ((r = read(fr, &buf, 1)) > 0)
 	{
 		if (r == -1)
-			err98();
+			err98(av[1]);
 		w = write(fw, &buf, 1);
 		if (w == -1)
-			err99();
+			err99(av[2]);
 		fw = open(av[2], O_WRONLY | O_APPEND);
 		if (fw == -1)
-		err99();
+		err99(av[2]);
 	}
 	cr = close(fr);
+	if (cr == -1)
+		err100(cr);
 	cw = close(fw);
-	if (cw == -1 || cr == -1)
-		err100();
+	if (cw == -1)
+		err100(cw);
 	return (0);
 }

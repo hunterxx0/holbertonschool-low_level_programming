@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *f, size_t l)
 	int fd = 0, r = 0;
 	char c, end = '\n';
 
-	if (f == NULL)
+	if (!f)
 		return (0);
 	len = (ssize_t)l;
 	fd = open(f, O_RDONLY);
@@ -36,9 +36,11 @@ ssize_t read_textfile(const char *f, size_t l)
 			if (w == -1)
 				return (0);
 			x++;
-			return (x);
+			break;
 		}
 	}
-			close(fd);
+	close(fd);
+	if (x > len)
+		return (0);
 	return (x);
 }

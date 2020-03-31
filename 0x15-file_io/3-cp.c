@@ -51,9 +51,8 @@ void err100(int s)
  */
 int main(int ac, char **av)
 {
-	char buf;
-	int fr = 0, fw = 0, w = 0;
-	int cr = 0, cw = 0, r = 0;
+	char buf[1024];
+	int fr = 0, fw = 0, w = 0, cr = 0, cw = 0, r = 1;
 
 	if (ac != 3)
 		err97();
@@ -63,16 +62,17 @@ int main(int ac, char **av)
 	fw = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fw == -1)
 		err99(av[2]);
-	while ((r = read(fr, &buf, 1)) > 0)
+	while (r)
 	{
+		r = read(fr, buf, 1024);
 		if (r == -1)
 			err98(av[1]);
-		w = write(fw, &buf, 1);
-		if (w == -1)
-			err99(av[2]);
-		fw = open(av[2], O_WRONLY | O_APPEND);
-		if (fw == -1)
-		err99(av[2]);
+		if (r > 0)
+		{
+			w = write(fw, buf, r);
+			if (w == -1)
+				err99(av[2]);
+		}
 	}
 	cr = close(fr);
 	if (cr == -1)

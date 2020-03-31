@@ -2,7 +2,7 @@
 /**
  * read_textfile? (- read file)?
  *
- * @a: input head
+ * @f: input file
  * @l: printed size
  * Return: x
  */
@@ -16,11 +16,11 @@ ssize_t read_textfile(const char *f, size_t l)
 		return (0);
 	len = (ssize_t)l;
 	fd = open(f, O_RDONLY);
-        if (fd == -1)
-                return (0);
+	if (fd == -1)
+		return (0);
 	while ((b = read(fd, &c, sizeof(c))) > 0 && x < len)
 	{
-	        write(1, &c, 1);
+		write(1, &c, 1);
 		x++;
 	}
 	if (b == 0 && x < len)

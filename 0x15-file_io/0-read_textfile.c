@@ -8,7 +8,7 @@
  */
 ssize_t read_textfile(const char *f, size_t l)
 {
-	ssize_t x = 0, len;
+	ssize_t x = 0, len, w = 0;
 	int fd, b;
 	char c;
 
@@ -20,13 +20,19 @@ ssize_t read_textfile(const char *f, size_t l)
 		return (0);
 	while ((b = read(fd, &c, sizeof(c))) > 0 && x < len)
 	{
+		if (b == -1)
+			return (0);
 		write(1, &c, 1);
+		if (w == -1)
+			return (0);
 		x++;
 	}
 	if (b == 0 && x < len)
 	{
 		c = '\n';
-		write(1, &c, 1);
+		w = write(1, &c, 1);
+		if (w == -1)
+			return (0);
 		x++;
 	}
 			close(fd);

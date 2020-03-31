@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * create_file? (- create file)?
+ * append_text_to_file? (- append text file)?
  *
  * @f: input file
  * @tc: printed size

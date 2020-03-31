@@ -1,34 +1,18 @@
 #include "holberton.h"
 /**
-* _strl(:)? (- long)?
-*
-* @s: input char
-* Return: 0 or 1
-*/
-int _strl(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
-}
-/**
  * err97(:)? (- err 97)?
  *
  * Return:
  */
-void err97()
+void err97(void)
 {
-	char *e97 = "Usage: cp file_from file_to\n";
-	int l97 = _strl(e97);
-
-	write(STDERR_FILENO, e97, l97);
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 /**
  * err98(:)? (- err 98)?
  *
+ * @s: file name
  * Return:
  */
 void err98(char *s)
@@ -39,6 +23,7 @@ void err98(char *s)
 /**
  * err99(:)? (- err 99)?
  *
+ * @s: file name
  * Return:
  */
 void err99(char *s)
@@ -49,18 +34,19 @@ void err99(char *s)
 /**
  * err100(:)? (- err 100)?
  *
+ * @s: fd
  * Return:
  */
-void err100(int c)
+void err100(int s)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d", c);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d", s);
 	exit(100);
 }
 /**
- * append_text_to_file? (- append text file)?
+ * main? (- cp 2 files)?
  *
- * @f: input file
- * @tc: printed size
+ * @ac: input file
+ * @av: printed size
  * Return: x
  */
 int main(int ac, char **av)

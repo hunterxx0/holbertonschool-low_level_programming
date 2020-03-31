@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *f, size_t l)
 	if (r == -1)
 		return (0);
 	w = write(1, c, r);
-	if (w == -1)
+	if (w == -1 || w != r)
 		return (0);
 
 	free(c);

@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * free_listint? (- free list)?
+ * free_dlistint? (- free list)?
  *
  * @h: input head
  * Return:

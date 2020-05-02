@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * insert_nodeint_at_index? (- add i'th node)?
+ * insert_dnodeint_at_index? (- add i'th node)?
  *
  * @h: input head
  * @i: index

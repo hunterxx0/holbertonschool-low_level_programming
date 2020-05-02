@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * delete_nodeint_at_index? (- del i'th node)?
+ * delete_dnodeint_at_index? (- del i'th node)?
  *
  * @h: input head
  * @i: index

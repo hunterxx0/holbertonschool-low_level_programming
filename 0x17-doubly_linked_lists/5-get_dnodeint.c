@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * get_nodeint_at_index? (- i'th node)?
+ * get_dnodeint_at_index? (- i'th node)?
  *
  * @h: input head
  * @i: index

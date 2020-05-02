@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_nodeint? (- add node at the beginning)?
+ * add_dnodeint? (- add node at the beginning)?
  *
  * @h: input head
  * @n: input node

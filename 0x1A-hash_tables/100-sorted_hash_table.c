@@ -12,9 +12,8 @@ shash_table_t *shash_table_create(unsigned long int s)
 	unsigned long int i = 0;
 
 	n = malloc(sizeof(shash_table_t));
-	if (!n)
+	if (!n || s == 0)
 		return (NULL);
-
 	n->size = s;
 	n->shead = NULL;
 	n->stail = NULL;
@@ -80,10 +79,12 @@ int shash_table_set(shash_table_t *ht, const char *k, const char *v)
 	shash_node_t *n = NULL, *t = NULL;
 	unsigned long int x = 0;
 
+	if (!ht || !k)
+		return (0);
 	if (check(ht, k, v))
 		return (1);
 	n = malloc(sizeof(shash_node_t));
-	if (!n || !k)
+	if (!n)
 		return (0);
 	n->key = strdup(k);
 	n->value = strdup(v);
@@ -178,9 +179,9 @@ void shash_table_print(const shash_table_t *ht)
 	unsigned long int start = 0;
 	shash_node_t *t = NULL;
 
-	printf("{");
 	if (ht)
 	{
+		printf("{");
 		t = ht->shead;
 		while (t)
 		{
@@ -190,8 +191,8 @@ void shash_table_print(const shash_table_t *ht)
 			start = 1;
 			t = t->snext;
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
 
 /**
@@ -205,9 +206,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 	unsigned long int start = 0;
 	shash_node_t *t = NULL;
 
-	printf("{");
 	if (ht)
 	{
+		printf("{");
 		t = ht->stail;
 		while (t)
 		{
@@ -217,8 +218,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 			start = 1;
 			t = t->sprev;
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
 
 /**

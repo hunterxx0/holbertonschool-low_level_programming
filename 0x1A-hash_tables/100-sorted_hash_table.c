@@ -104,9 +104,9 @@ int shash_table_set(shash_table_t *ht, const char *k, const char *v)
 	else
 	{
 		t = ht->shead;
-		while (t && (!n->next && !n->sprev))
+		while (t && (!n->snext && !n->sprev))
 		{
-		if (strcmp(k, t->key) < 0)
+			if (strcmp(k, t->key) < 0)
 			{
 				n->sprev = t->sprev;
 				n->snext = t;

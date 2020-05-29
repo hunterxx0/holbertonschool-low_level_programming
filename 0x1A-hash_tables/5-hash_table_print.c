@@ -19,20 +19,16 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				if (start != 0)
 					printf(", ");
-printf("'%s': '%s'", ht->array[x]->key, ht->array[x]->value);
-start = 1;
-if (ht->array[x]->next)
-{
-t = ht->array[x]->next;
-while (t)
-{
-	if (start != 0)
-		printf(", ");
-printf("%s': '%s'", t->key, t->value);
-t = t->next;
-}
-}
-}
+				t = ht->array[x];
+				while (t)
+				{
+					printf("%s': '%s'", t->key, t->value);
+					start = 1;
+					if (t->next)
+						printf(", ");
+					t = t->next;
+				}
+			}
 			x++;
 		}
 		printf("}\n");

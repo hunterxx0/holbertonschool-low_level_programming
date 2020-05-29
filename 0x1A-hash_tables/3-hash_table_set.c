@@ -6,7 +6,7 @@
  * @k: hash key
  * Return: n : pointer to the new hash table
  */
-char *hash_table_get(const hash_table_t *ht, const char *k)
+char *get_get(const hash_table_t *ht, const char *k)
 {
 	unsigned long int x = 0;
 	hash_node_t *t = NULL;
@@ -49,7 +49,7 @@ int check_t(hash_table_t *ht, const char *k, const char *v)
 	hash_node_t *t = NULL;
 	char *z = NULL;
 
-	if (hash_table_get(ht, k) != NULL)
+	if (get_get(ht, k) != NULL)
 	{
 		t = ht->array[key_index((const unsigned char *)k, ht->size)];
 		if (!strcmp(k, t->key))

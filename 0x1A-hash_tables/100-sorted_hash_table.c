@@ -19,9 +19,14 @@ shash_table_t *shash_table_create(unsigned long int s)
 	n->stail = NULL;
 	n->array = malloc(sizeof(shash_node_t *) * s);
 	if (!n->array)
+	{
+		free(n);
 		return (NULL);
+	}
 	while (i < s)
 		n->array[i++] = NULL;
+	n->shead = NULL;
+	n->stail = NULL;
 	return (n);
 }
 /**

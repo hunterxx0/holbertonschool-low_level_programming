@@ -24,9 +24,9 @@ char *hash_table_get(const hash_table_t *ht, const char *k)
 					t = ht->array[x]->next;
 					while (t)
 					{
-						if (!strcmp(t->key, k))
-							return (t->value);
-						t = t->next;
+					if (!strcmp(t->key, k))
+						return (t->value);
+					t = t->next;
 					}
 				}
 			}
@@ -35,7 +35,6 @@ char *hash_table_get(const hash_table_t *ht, const char *k)
 	}
 	return (NULL);
 }
-
 
 /**
  * check_t? (- Updates a hash table)?
@@ -47,36 +46,36 @@ char *hash_table_get(const hash_table_t *ht, const char *k)
  */
 int check_t(hash_table_t *ht, const char *k, const char *v)
 {
-        hash_node_t *t = NULL;
-        char *z = NULL;
+	hash_node_t *t = NULL;
+	char *z = NULL;
 
-        if (hash_table_get(ht, k) != NULL)
-        {
-                t = ht->array[key_index((const unsigned char *)k, ht->size)];
-                if (!strcmp(k, t->key))
-                {
-                        z = t->value;
-                        free(z);
-                        t->value = strdup(v);
-                        return (1);
-                }
-                else
-                {
-                        while (t)
-                        {
-                                if (!strcmp(k, t->key))
-                                {
-                                        z = t->value;
-                                        free(z);
-                                        t->value = strdup(v);
-                                        return (1);
-                                }
-                                t = t->next;
-                        }
-                }
-        }
+	if (hash_table_get(ht, k) != NULL)
+	{
+		t = ht->array[key_index((const unsigned char *)k, ht->size)];
+		if (!strcmp(k, t->key))
+		{
+			z = t->value;
+			free(z);
+			t->value = strdup(v);
+			return (1);
+		}
+		else
+		{
+			while (t)
+			{
+				if (!strcmp(k, t->key))
+				{
+					z = t->value;
+					free(z);
+					t->value = strdup(v);
+					return (1);
+				}
+				t = t->next;
+			}
+		}
+	}
 
-        return (0);
+	return (0);
 }
 
 /**

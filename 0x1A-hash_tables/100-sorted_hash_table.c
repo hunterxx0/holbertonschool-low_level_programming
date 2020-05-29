@@ -72,6 +72,44 @@ int check(shash_table_t *ht, const char *k, const char *v)
 }
 
 /**
+ * work? (- Updates a hash table)?
+ *
+ * @ht: input table
+ * @k: hash key
+ * @n: new node
+ * Return: n : pointer to the new hash table
+ */
+int work(shash_table_t *ht, shash_node_t *n, const char *k)
+{
+	shash_node_t *t = ht->shead;
+
+	while (t && (!n->snext && !n->sprev))
+	{
+		if (strcmp(k, t->key) < 0)
+		{
+			n->sprev = t->sprev;
+			n->snext = t;
+			if (t->sprev)
+				t->sprev->snext = n;
+			t->sprev = n;
+
+			if (ht->shead == t)
+				ht->shead = n;
+			return (1);
+		}
+		if (!t->snext)
+		{
+			t->snext = n;
+			n->sprev = t;
+			ht->stail = n;
+			return (1);
+		}
+		t = t->snext;
+	}
+	return (0);
+}
+
+/**
  * shash_table_set? (- Updates a hash table)?
  *
  * @ht: input table
@@ -81,7 +119,7 @@ int check(shash_table_t *ht, const char *k, const char *v)
  */
 int shash_table_set(shash_table_t *ht, const char *k, const char *v)
 {
-	shash_node_t *n = NULL, *t = NULL;
+	shash_node_t *n = NULL;
 	unsigned long int x = 0;
 
 	if (!ht || !k)
@@ -105,33 +143,14 @@ int shash_table_set(shash_table_t *ht, const char *k, const char *v)
 	ht->array[x] = n;
 	}
 	if (!ht->shead)
+	{
 		ht->shead = n;
+		ht->stail = n;
+	}
 	else
 	{
-		t = ht->shead;
-		while (t && (!n->snext && !n->sprev))
-		{
-			if (strcmp(k, t->key) < 0)
-			{
-				n->sprev = t->sprev;
-				n->snext = t;
-				if (t->sprev)
-					t->sprev->snext = n;
-				t->sprev = n;
-
-				if (ht->shead == t)
-					ht->shead = n;
-				return (1);
-			}
-			if (!t->snext)
-			{
-				t->snext = n;
-				n->sprev = t;
-				ht->stail = n;
-				return (1);
-			}
-			t = t->snext;
-		}
+		if (!work(ht, n, k))
+			return (0);
 	}
 	return (1);
 }

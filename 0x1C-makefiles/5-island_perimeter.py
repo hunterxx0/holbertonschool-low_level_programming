@@ -21,12 +21,11 @@ def island_perimeter(grid):
                     wid = 1
                     i, j, flag = x, y, 1
                     while grid[i][j] == 1:
-                        print("www i=", i, "  j=", j)
                         if flag != 1:
                             wid += 1
                         if flag == 1:
                             if (j != 0 and j != len(grid[x])-1 and
-                                grid[i][j+1] == 1 and grid[i][j-1] == 1):
+                               grid[i][j+1] == 1 and grid[i][j-1] == 1):
                                 j -= 1
                             elif j != 0 and grid[i][j-1] == 1:
                                 flag = 2
@@ -38,12 +37,11 @@ def island_perimeter(grid):
                             j -= 1
                     j, flag = y, 1
                     while grid[i][j] == 1:
-                        print("LLi=", i, "  j=", j)
                         if flag != 1:
                             leng += 1
                         if flag == 1:
                             if (i != 0 and i != len(grid[i])-1 and
-                                grid[i+1][j] == 1 and grid[i-1][j] == 1):
+                               grid[i+1][j] == 1 and grid[i-1][j] == 1):
                                 i -= 1
                             elif j != 0 and grid[i-1][j] == 1:
                                 flag = 2
@@ -53,5 +51,4 @@ def island_perimeter(grid):
                             i += 1
                         if flag == 2:
                             i -= 1
-    print (wid, '///', leng)
     return (wid * 2) + (leng * 2)

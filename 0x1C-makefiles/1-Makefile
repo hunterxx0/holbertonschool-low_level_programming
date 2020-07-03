@@ -1,0 +1,19 @@
+.PHONY = all main holberton m
+
+CC = gcc
+DEPS = m.h
+
+all: main holberton
+
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $<
+
+
+main: main.c
+
+
+holberton: holberton.c
+
+
+	$(CC) main.c holberton.c -o holberton

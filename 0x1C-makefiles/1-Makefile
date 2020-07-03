@@ -1,19 +1,10 @@
-.PHONY = all main holberton m
-
 CC = gcc
-DEPS = m.h
+SRC = main.c holberton.c
 
-all: main holberton
-
-
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $<
+all: holberton
 
 
-main: main.c
+holberton: $(SRC)
 
 
-holberton: holberton.c
-
-
-	$(CC) main.c holberton.c -o holberton
+	$(CC) $(SRC) -o holberton

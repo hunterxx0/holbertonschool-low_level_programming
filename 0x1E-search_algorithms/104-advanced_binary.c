@@ -39,9 +39,9 @@ int _binar(int *arr, int l, int r, int val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)
 		{
-			for (i = mid; arr[i] == val; i--)
-				;
-			return (_binar(arr, ++i, mid, val));
+			/*for (i = mid; arr[i] == val; i--)
+			  ;*/
+			return (_binar(arr, mid - 1, mid, val));
 		}
 		if (arr[mid] > val)
 			return (_binar(arr, 0, mid - 1, val));

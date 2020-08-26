@@ -45,7 +45,7 @@ int _binar(int *arr, int l, int r, int val)
 		if (arr[mid] == val && arr[mid - 1] != val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)
-			return (_binar(arr, 0, mid, val));
+			return (_binar(arr, l, mid, val));
 		if (arr[mid] > val)
 			return (_binar(arr, 0, mid - 1, val));
 		return (_binar(arr, mid + 1, r, val));

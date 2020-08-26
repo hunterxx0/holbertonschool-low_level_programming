@@ -37,11 +37,11 @@ int arr_print(int *arr, int i, int r, int val)
  */
 int _binar(int *arr, int l, int r, int val)
 {
-	int i = l, mid = l + (r - l) / 2, x = 0;
+	int i = l, mid = l + (r - l) / 2;
 
 	if (r >= l)
 	{
-		x = arr_print(arr, i, r, val);
+		arr_print(arr, i, r, val);
 		if (arr[mid] == val && arr[mid - 1] != val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)

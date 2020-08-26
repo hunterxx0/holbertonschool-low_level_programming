@@ -60,7 +60,10 @@ int _binar(int *arr, int l, int r, int val)
  */
 int advanced_binary(int *arr, size_t sz, int val)
 {
+	int x = 0;
+
 	if (!arr)
 		return (-1);
-	return (_binar(arr, 0, sz - 1, val));
+	x = _binar(arr, 0, sz - 1, val)
+	return (x);
 }

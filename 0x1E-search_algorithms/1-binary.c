@@ -41,7 +41,7 @@ int _binar(int *arr, int l, int r, int val)
  */
 int binary_search(int *arr, size_t sz, int val)
 {
-	if (!arr)
+	if (!arr || !sz)
 		return (-1);
 	return (_binar(arr, 0, sz - 1, val));
 }

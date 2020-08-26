@@ -5,10 +5,12 @@
  * @arr: the array to be printed
  * @i: arr limit left
  * @r: arr limit right
- * Return:
+ * Return: x
  */
-void arr_print(int *arr, int i, int r)
+int arr_print(int *arr, int i, int r, int val)
 {
+	int x = 0;
+
 	printf("Searching in array: ");
 	for (; i < r + 1; i++)
 	{
@@ -16,7 +18,11 @@ void arr_print(int *arr, int i, int r)
 			printf("%d\n", arr[i]);
 		else
 			printf("%d, ", arr[i]);
+		if (arr[i] == val)
+			x++;
 	}
+
+	return (x);
 }
 
 /**
@@ -30,22 +36,16 @@ void arr_print(int *arr, int i, int r)
  */
 int _binar(int *arr, int l, int r, int val)
 {
-	int i = l, mid = l + (r - l) / 2;
+	int i = l, mid = l + (r - l) / 2, x = 0;
 
 	if (r >= l)
 	{
-		arr_print(arr, i, r);
+		x = arr_print(arr, i, r, val);
+		printf("x = %d// mid = %d// r - l = %d\n", x, mid, r - l + 1 );
 		if (arr[mid] == val && arr[mid - 1] != val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)
-		{
-			if (arr[mid - 2] != val)
-				return (_binar(arr, mid - 1, mid, val));
-			else if (arr[mid - 3] != val)
-				return (_binar(arr, mid - 2, mid, val));
-			else if (arr[mid - 4] != val)
-				return (_binar(arr, mid - 3, mid, val));
-		}
+			return (_binar(arr, 0, mid, val));
 		if (arr[mid] > val)
 			return (_binar(arr, 0, mid - 1, val));
 		return (_binar(arr, mid + 1, r, val));

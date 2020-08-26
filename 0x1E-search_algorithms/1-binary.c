@@ -10,7 +10,7 @@
  */
 int _binar(int *arr, int l, int r, int val)
 {
-	int i = l, mid = l + (r - l) / 2;
+	int i = l, mid = (r + l) / 2;
 
 	if (r >= l)
 	{

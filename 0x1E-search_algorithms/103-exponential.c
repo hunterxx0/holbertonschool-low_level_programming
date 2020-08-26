@@ -43,7 +43,7 @@ int min(int a, int b)
 	return (a < b ? a : b);
 }
 /**
- * interpolation_search? (- interpolation search)?
+ * exponential_search? (- exponential search)?
  *
  * @arr: the array to be searched
  * @sz: the left index

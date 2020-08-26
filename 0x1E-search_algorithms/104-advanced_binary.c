@@ -1,5 +1,25 @@
 #include "search_algos.h"
 /**
+ * arr_print? (- print array)?
+ *
+ * @arr: the array to be printed
+ * @i: arr limit left
+ * @r: arr limit right
+ * Return:
+ */
+void arr_print(int *arr, int i, int r)
+{
+	printf("Searching in array: ");
+	for (; i < r + 1; i++)
+	{
+		if (i == r)
+			printf("%d\n", arr[i]);
+		else
+			printf("%d, ", arr[i]);
+	}
+}
+
+/**
  * _binar? (- binary search engine)?
  *
  * @arr: the array to be searched
@@ -14,14 +34,7 @@ int _binar(int *arr, int l, int r, int val)
 
 	if (r >= l)
 	{
-		printf("Searching in array: ");
-		for (;i < r + 1; i++)
-		{
-			if (i == r)
-				printf("%d\n", arr[i]);
-			else
-				printf("%d, ", arr[i]);
-		}
+		arr_print(arr, i, r);
 		if (arr[mid] == val && arr[mid - 1] != val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)
@@ -38,7 +51,7 @@ int _binar(int *arr, int l, int r, int val)
 
 }
 /**
- * binary_search? (- binary_search)?
+ * advanced_binary? (- advanced_binary)?
  *
  * @arr: the array to be searched
  * @sz: size of the array

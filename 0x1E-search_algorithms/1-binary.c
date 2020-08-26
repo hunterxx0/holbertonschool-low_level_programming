@@ -12,7 +12,7 @@ int _binar(int *arr, int l, int r, int val)
 {
 	int i = l, mid = l + (r - l) / 2;
 
-	if (r > l)
+	if (r >= l)
 	{
 		printf("Searching in array: ");
 		for (; i < r + 1; i++)

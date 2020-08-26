@@ -5,6 +5,7 @@
  * @arr: the array to be printed
  * @i: arr limit left
  * @r: arr limit right
+ * @val: the value to find
  * Return: x
  */
 int arr_print(int *arr, int i, int r, int val)
@@ -41,7 +42,6 @@ int _binar(int *arr, int l, int r, int val)
 	if (r >= l)
 	{
 		x = arr_print(arr, i, r, val);
-		printf("x = %d// mid = %d// r - l = %d\n", x, mid, r - l + 1 );
 		if (arr[mid] == val && arr[mid - 1] != val)
 			return (mid);
 		if (arr[mid] == val && arr[mid - 1] == val)

@@ -19,7 +19,7 @@ int min(int a, int b)
  * @val: the value to find
  * Return: n : index
  */
-listint_t *jump_list(listint_t *list, size_t sz, int val)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	int jump = (int)sqrt(n), left = 0, right = 0, i = 0;
 
